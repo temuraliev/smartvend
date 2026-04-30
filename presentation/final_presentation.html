@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartVend Mini Presentation</title>
+  <style>
+    :root {
+      --ink: #182026;
+      --muted: #5b6470;
+      --line: #d8dee8;
+      --accent: #0f766e;
+      --accent-2: #7c3aed;
+      --paper: #ffffff;
+      --soft: #f3f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+    }
+
+    .deck {
+      display: grid;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    section {
+      width: min(1120px, 100%);
+      min-height: 630px;
+      margin: 0 auto;
+      padding: 54px 64px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 16px 40px rgba(24, 32, 38, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 48px;
+      line-height: 1.08;
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 30px;
+      color: var(--accent);
+      letter-spacing: 0;
+    }
+
+    p, li {
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 30px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: #fbfcfd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #e8f3f1;
+    }
+
+    code, pre {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 23px;
+    }
+
+    pre {
+      margin: 12px 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: #17212b;
+      color: #e8fff8;
+      overflow: auto;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #efeafd;
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .deck {
+        display: block;
+        padding: 0;
+      }
+
+      section {
+        width: 100vw;
+        min-height: 100vh;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section>
+      <span class="tag">Slide 1</span>
+      <h1>SmartVend Mini</h1>
+      <h2>Simple Vending Machine Logic</h2>
+      <p class="subtitle">EEE120 Digital Design Fundamentals</p>
+      <p>Instructor: Dr. Rajan Tirpathi</p>
+      <p>Team Members: Unarov Ahrorbek, Temur Aliyev, Islom Raxmanov, Shaxzodbek Turabidinov, Soliha Xolova</p>
+    </section>
+
+    <section>
+      <span class="tag">Slide 2</span>
+      <h1>Problem</h1>
+      <p>Vending machines must decide when to dispense an item, return money, or show an error.</p>
+      <p>Our system uses basic digital logic to make this decision clearly and correctly.</p>
+    </section>
+
+    <section>
+      <span class="tag">Slide 3</span>
+      <h1>System Overview</h1>
+      <div class="grid">
+        <div class="box">
+          <h2>Inputs</h2>
+          <ul>
+            <li>Coin 1 inserted</li>
+            <li>Coin 2 inserted</li>
+            <li>Product selected</li>
+            <li>Product available</li>
+            <li>Cancel button</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>Outputs</h2>
+          <ul>
+            <li>Dispense item</li>
+            <li>Return money</li>
+            <li>Show error</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="tag">Slide 4</span>
+      <h1>Logic Design</h1>
+      <p>The product price is two coins.</p>
+      <pre>P = C1 . C2
+M = C1 + C2
+
+D = X' . S . A . P
+R = M . (X + S . A')
+E = X' . [(S . A . P') + (S . A') + (S' . M)]</pre>
+    </section>
+
+    <section>
+      <span class="tag">Slide 5</span>
+      <h1>Decision Table</h1>
+      <table>
+        <tr><th>Situation</th><th>D</th><th>R</th><th>E</th></tr>
+        <tr><td>Enough payment, selected, available</td><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>Cancel pressed after money</td><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>Product unavailable</td><td>0</td><td>1 if money inserted</td><td>1</td></tr>
+        <tr><td>Not enough payment</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>Money inserted but no selection</td><td>0</td><td>0</td><td>1</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <span class="tag">Slide 6</span>
+      <h1>CircuitVerse Design</h1>
+      <ul>
+        <li>Five input switches: C1, C2, S, A, X</li>
+        <li>Intermediate signals: enough payment and money present</li>
+        <li>AND, OR, and NOT gates create output logic</li>
+        <li>Three output LEDs show dispense, return money, and error</li>
+      </ul>
+      <p class="subtitle">Insert CircuitVerse screenshot before submission.</p>
+    </section>
+
+    <section>
+      <span class="tag">Slide 7</span>
+      <h1>Python Prototype</h1>
+      <ul>
+        <li>Uses the same Boolean equations as the circuit</li>
+        <li>Accepts user input from a console menu</li>
+        <li>Prints output signals and a clear status message</li>
+        <li>Includes built-in test cases and a truth table option</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="tag">Slide 8</span>
+      <h1>Demo</h1>
+      <pre>Test 1:
+C1=1, C2=1, S=1, A=1, X=0
+Expected: D=1, R=0, E=0
+
+Test 2:
+C1=1, C2=0, S=1, A=1, X=0
+Expected: D=0, R=0, E=1</pre>
+    </section>
+
+    <section>
+      <span class="tag">Slide 9</span>
+      <h1>AI/LLM Usage</h1>
+      <ul>
+        <li>AI helped organize the idea and draft explanations.</li>
+        <li>AI helped generate Python code and test cases.</li>
+        <li>The group checked the equations, truth table, and output behavior.</li>
+        <li>Each member should explain their own contribution.</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="tag">Slide 10</span>
+      <h1>Conclusion</h1>
+      <ul>
+        <li>The circuit makes correct vending decisions.</li>
+        <li>The Python version matches the digital logic.</li>
+        <li>Future work can add multiple products, inventory memory, and a stronger state machine.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
