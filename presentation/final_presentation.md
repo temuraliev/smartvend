@@ -82,7 +82,15 @@ E = X' . [(S . A . P') + (S . A') + (S' . M)]
 
 # Slide 6: CircuitVerse Design
 
-Show CircuitVerse screenshot here.
+CircuitVerse project link:
+
+https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530
+
+Circuit screenshot:
+
+```text
+screenshots/circuit_design.png
+```
 
 Main parts:
 

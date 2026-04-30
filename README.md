@@ -14,6 +14,10 @@
 
 EEE120 Digital Design Fundamentals
 
+## GitHub Repository
+
+https://github.com/temuraliev/smartvend
+
 ## Instructor
 
 Dr. Rajan Tirpathi
@@ -80,11 +84,7 @@ Explanation:
 
 ## CircuitVerse Link
 
-Paste your final CircuitVerse project link here:
-
-`https://circuitverse.org/simulator/...`
-
-Also update [circuitverse_link.txt](circuitverse_link.txt).
+[SmartVend Mini CircuitVerse Project](https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530)
 
 For the fastest build path, use [docs/circuitverse_fast_submission_plan.md](docs/circuitverse_fast_submission_plan.md).
 
@@ -137,10 +137,10 @@ python src/main.py --truth-table
 
 Place final screenshots in the [screenshots](screenshots/) folder:
 
-- `circuit_design.png`: screenshot of your CircuitVerse circuit.
+- `circuit_design.png`: screenshot of the CircuitVerse circuit.
 - `python_output.png`: screenshot of your Python program output.
 
-The folder currently contains instructions and should be updated after you run the circuit and software.
+The CircuitVerse screenshot has been added. Add the Python output screenshot after running the software test command.
 
 ## Future Improvements
 

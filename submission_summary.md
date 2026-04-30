@@ -16,11 +16,11 @@ SmartVend Mini - Simple Vending Machine Logic
 
 ## GitHub Repository Link
 
-Paste GitHub repository link here.
+https://github.com/temuraliev/smartvend
 
 ## CircuitVerse Project Link
 
-Paste CircuitVerse project link here.
+https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530
 
 ## Presentation File
 

@@ -136,6 +136,17 @@
       margin-bottom: 16px;
     }
 
+    .circuit-shot {
+      display: block;
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 8px 0 14px;
+      background: #ffffff;
+    }
+
     @media print {
       body {
         background: white;
@@ -228,13 +239,14 @@ E = X' . [(S . A . P') + (S . A') + (S' . M)]</pre>
     <section>
       <span class="tag">Slide 6</span>
       <h1>CircuitVerse Design</h1>
+      <p><a href="https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530">CircuitVerse Project Link</a></p>
+      <img src="../screenshots/circuit_design.png" alt="SmartVend CircuitVerse circuit screenshot" class="circuit-shot">
       <ul>
         <li>Five input switches: C1, C2, S, A, X</li>
         <li>Intermediate signals: enough payment and money present</li>
         <li>AND, OR, and NOT gates create output logic</li>
         <li>Three output LEDs show dispense, return money, and error</li>
       </ul>
-      <p class="subtitle">Insert CircuitVerse screenshot before submission.</p>
     </section>
 
     <section>

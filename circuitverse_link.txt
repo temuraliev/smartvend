@@ -1,4 +1,3 @@
-Paste the final CircuitVerse project link here after building the circuit:
+CircuitVerse project link:
 
-https://circuitverse.org/simulator/your-project-link
-
+https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530
