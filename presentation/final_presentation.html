@@ -6,13 +6,17 @@
   <title>SmartVend Mini Presentation</title>
   <style>
     :root {
-      --ink: #182026;
+      --ink: #17202a;
       --muted: #5b6470;
-      --line: #d8dee8;
-      --accent: #0f766e;
-      --accent-2: #7c3aed;
+      --line: #d7dee8;
       --paper: #ffffff;
-      --soft: #f3f6f8;
+      --soft: #eef3f6;
+      --teal: #0f766e;
+      --green: #15803d;
+      --blue: #1d4ed8;
+      --violet: #6d28d9;
+      --red: #b91c1c;
+      --amber: #b45309;
     }
 
     * {
@@ -33,37 +37,45 @@
     }
 
     section {
-      width: min(1120px, 100%);
-      min-height: 630px;
+      width: min(1180px, 100%);
+      min-height: 660px;
       margin: 0 auto;
-      padding: 54px 64px;
+      padding: 42px 54px;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 8px;
-      box-shadow: 0 16px 40px rgba(24, 32, 38, 0.08);
+      box-shadow: 0 14px 36px rgba(23, 32, 42, 0.09);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      overflow: hidden;
     }
 
     h1 {
-      margin: 0 0 18px;
-      font-size: 48px;
+      margin: 0 0 14px;
+      font-size: 44px;
       line-height: 1.08;
-      color: var(--ink);
       letter-spacing: 0;
     }
 
     h2 {
-      margin: 0 0 16px;
-      font-size: 30px;
-      color: var(--accent);
+      margin: 0 0 12px;
+      font-size: 27px;
+      line-height: 1.18;
+      color: var(--teal);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      color: var(--ink);
       letter-spacing: 0;
     }
 
     p, li {
-      font-size: 25px;
-      line-height: 1.35;
+      font-size: 21px;
+      line-height: 1.33;
     }
 
     p {
@@ -72,84 +84,304 @@
 
     ul {
       margin: 8px 0 0;
-      padding-left: 30px;
+      padding-left: 26px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: 25px;
+      font-size: 23px;
+    }
+
+    .tag {
+      align-self: flex-start;
+      padding: 7px 11px;
+      border-radius: 8px;
+      background: #e8f3f1;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: start;
+      gap: 22px;
+      align-items: stretch;
     }
 
-    .box {
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .panel {
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 20px;
       background: #fbfcfd;
+      padding: 17px;
+    }
+
+    .accent {
+      border-left: 6px solid var(--teal);
+    }
+
+    .blue {
+      border-left-color: var(--blue);
+    }
+
+    .violet {
+      border-left-color: var(--violet);
+    }
+
+    .green {
+      border-left-color: var(--green);
+    }
+
+    .amber {
+      border-left-color: var(--amber);
+    }
+
+    .red {
+      border-left-color: var(--red);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .machine {
+      position: relative;
+      height: 420px;
+      border: 3px solid #1f2937;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #f8fafc 0%, #edf5f7 100%);
+      padding: 28px;
+    }
+
+    .screen {
+      height: 90px;
+      border-radius: 8px;
+      background: #102a43;
+      color: #b7f7d2;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .slot, .button, .tray {
+      border: 2px solid #263238;
+      border-radius: 8px;
+      background: #ffffff;
+      min-height: 72px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .button {
+      background: #e8f3f1;
+    }
+
+    .tray {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      background: #f6f3e9;
+      min-height: 78px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr 42px 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .flow-box {
+      min-height: 98px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 14px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .arrow {
+      color: var(--teal);
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .io-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .io-pill {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #ffffff;
+      text-align: center;
+      min-height: 74px;
+      display: grid;
+      align-content: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .outputs {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    pre {
+      margin: 12px 0 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: #17212b;
+      color: #e7fff7;
+      overflow: auto;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95em;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 22px;
+      font-size: 18px;
       margin-top: 10px;
     }
 
     th, td {
       border: 1px solid var(--line);
-      padding: 10px 12px;
+      padding: 9px 10px;
       text-align: left;
+      vertical-align: top;
     }
 
     th {
       background: #e8f3f1;
+      color: #12322e;
     }
 
-    code, pre {
-      font-family: Consolas, "Courier New", monospace;
-      font-size: 23px;
-    }
-
-    pre {
-      margin: 12px 0;
-      padding: 16px;
-      border-radius: 8px;
-      background: #17212b;
-      color: #e8fff8;
-      overflow: auto;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: #efeafd;
-      color: var(--accent-2);
-      font-weight: 700;
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-
-    .circuit-shot {
+    .shot {
       display: block;
       width: 100%;
-      max-height: 300px;
+      max-height: 325px;
       object-fit: contain;
       border: 1px solid var(--line);
       border-radius: 8px;
-      margin: 8px 0 14px;
       background: #ffffff;
+    }
+
+    .terminal-shot {
+      max-height: 290px;
+      background: #111827;
+    }
+
+    .test-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .test-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #ffffff;
+      min-height: 150px;
+    }
+
+    .test-card strong {
+      display: block;
+      font-size: 18px;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .test-card span {
+      display: block;
+      font-size: 16px;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .roles {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .role {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #ffffff;
+      min-height: 116px;
+    }
+
+    .role b {
+      display: block;
+      color: var(--teal);
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .role span {
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .small {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.3;
     }
 
     @media print {
       body {
-        background: white;
+        background: #ffffff;
       }
 
       .deck {
@@ -160,9 +392,9 @@
       section {
         width: 100vw;
         min-height: 100vh;
-        box-shadow: none;
         border: none;
         border-radius: 0;
+        box-shadow: none;
         page-break-after: always;
       }
     }
@@ -172,125 +404,306 @@
   <main class="deck">
     <section>
       <span class="tag">Slide 1</span>
-      <h1>SmartVend Mini</h1>
-      <h2>Simple Vending Machine Logic</h2>
-      <p class="subtitle">EEE120 Digital Design Fundamentals</p>
-      <p>Instructor: Dr. Rajan Tirpathi</p>
-      <p>Team Members: Unarov Ahrorbek, Temur Aliyev, Islom Raxmanov, Shaxzodbek Turabidinov, Soliha Xolova</p>
+      <div class="hero-layout">
+        <div>
+          <h1>SmartVend Mini</h1>
+          <h2>Simple Vending Machine Logic</h2>
+          <p class="subtitle">EEE120 Digital Design Fundamentals</p>
+          <p><b>Instructor:</b> Dr. Rajan Tirpathi</p>
+          <p><b>Team:</b> Unarov Ahrorbek, Temur Aliyev, Islom Raxmanov, Shaxzodbek Turabidinov, Soliha Xolova</p>
+          <p>Our project shows how basic digital gates can control a real practical system: a vending machine that decides when to dispense, return money, or show an error.</p>
+        </div>
+        <div class="machine">
+          <div class="screen">READY</div>
+          <div class="slots">
+            <div class="slot">Coin 1</div>
+            <div class="slot">Coin 2</div>
+            <div class="button">Select</div>
+            <div class="button">Cancel</div>
+          </div>
+          <div class="tray">Dispense Tray</div>
+        </div>
+      </div>
     </section>
 
     <section>
       <span class="tag">Slide 2</span>
-      <h1>Problem</h1>
-      <p>Vending machines must decide when to dispense an item, return money, or show an error.</p>
-      <p>Our system uses basic digital logic to make this decision clearly and correctly.</p>
+      <h1>Problem And Relevance</h1>
+      <div class="grid">
+        <div class="panel accent">
+          <h2>Problem</h2>
+          <p>A vending machine must make a reliable decision from simple yes/no signals. If the logic is wrong, it may give a product without payment, keep the user's money, or fail to show a useful error.</p>
+          <p>Our design solves this with clear digital rules that can be tested using a truth table.</p>
+        </div>
+        <div class="panel accent blue">
+          <h2>Why It Matters</h2>
+          <ul>
+            <li>Retail automation uses the same kind of decision logic.</li>
+            <li>Embedded systems often read simple input signals and produce output actions.</li>
+            <li>Payment systems must be predictable and easy to test.</li>
+            <li>The same idea can extend to ticket machines, lockers, and access systems.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-box">User inserts coins and selects product</div>
+        <div class="arrow">></div>
+        <div class="flow-box">Digital logic checks conditions</div>
+        <div class="arrow">></div>
+        <div class="flow-box">Machine dispenses, returns money, or shows error</div>
+      </div>
     </section>
 
     <section>
       <span class="tag">Slide 3</span>
       <h1>System Overview</h1>
+      <h2>Five Inputs</h2>
+      <div class="io-row">
+        <div class="io-pill">C1<br><span class="small">Coin 1 inserted</span></div>
+        <div class="io-pill">C2<br><span class="small">Coin 2 inserted</span></div>
+        <div class="io-pill">S<br><span class="small">Product selected</span></div>
+        <div class="io-pill">A<br><span class="small">Product available</span></div>
+        <div class="io-pill">X<br><span class="small">Cancel button</span></div>
+      </div>
+      <div class="flow">
+        <div class="flow-box">Input Pins</div>
+        <div class="arrow">></div>
+        <div class="flow-box">AND, OR, NOT Gates</div>
+        <div class="arrow">></div>
+        <div class="flow-box">Output LEDs</div>
+      </div>
+      <h2 style="margin-top: 22px;">Three Outputs</h2>
+      <div class="io-row outputs">
+        <div class="io-pill">D<br><span class="small">Dispense item</span></div>
+        <div class="io-pill">R<br><span class="small">Return money</span></div>
+        <div class="io-pill">E<br><span class="small">Show error</span></div>
+      </div>
+    </section>
+
+    <section>
+      <span class="tag">Slide 4</span>
+      <h1>Digital Logic Design</h1>
       <div class="grid">
-        <div class="box">
-          <h2>Inputs</h2>
-          <ul>
-            <li>Coin 1 inserted</li>
-            <li>Coin 2 inserted</li>
-            <li>Product selected</li>
-            <li>Product available</li>
-            <li>Cancel button</li>
-          </ul>
+        <div class="panel accent green">
+          <h2>Intermediate Signals</h2>
+          <p>The product price is two coins, so both coin inputs must be active for enough payment.</p>
+          <pre>P = C1 . C2
+M = C1 + C2</pre>
+          <p><code>P</code> means enough payment. <code>M</code> means at least one coin is present.</p>
         </div>
-        <div class="box">
-          <h2>Outputs</h2>
+        <div class="panel accent violet">
+          <h2>Output Equations</h2>
+          <pre>D = X' . S . A . P
+R = M . (X + S . A')
+E = X' . [(S . A . P')
+    + (S . A') + (S' . M)]</pre>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top: 18px;">
+        <div class="panel">Dispense requires correct payment, selected product, available product, and no cancel.</div>
+        <div class="panel">Return money happens when money exists and cancel is pressed or product is unavailable.</div>
+        <div class="panel">Error appears for not enough payment, unavailable product, or money without selection.</div>
+      </div>
+    </section>
+
+    <section>
+      <span class="tag">Slide 5</span>
+      <h1>Decision Table</h1>
+      <p>This table summarizes the main truth-table behavior. The complete truth table is included in the GitHub repository as <code>docs/truth_table.csv</code>.</p>
+      <table>
+        <tr>
+          <th>Situation</th>
+          <th>Input condition</th>
+          <th>D</th>
+          <th>R</th>
+          <th>E</th>
+          <th>Meaning</th>
+        </tr>
+        <tr>
+          <td>Correct purchase</td>
+          <td>C1=1, C2=1, S=1, A=1, X=0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Release item</td>
+        </tr>
+        <tr>
+          <td>Not enough payment</td>
+          <td>S=1, A=1, P=0, X=0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>Ask for more payment</td>
+        </tr>
+        <tr>
+          <td>Product unavailable</td>
+          <td>S=1, A=0, X=0</td>
+          <td>0</td>
+          <td>1 if money exists</td>
+          <td>1</td>
+          <td>Do not dispense unavailable item</td>
+        </tr>
+        <tr>
+          <td>Cancel with money</td>
+          <td>M=1, X=1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>Return inserted money</td>
+        </tr>
+        <tr>
+          <td>Idle</td>
+          <td>No money and no selected product</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Wait for user</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <span class="tag">Slide 6</span>
+      <h1>CircuitVerse Implementation</h1>
+      <div class="grid">
+        <div>
+          <img src="../screenshots/circuit_design.png" alt="CircuitVerse screenshot" class="shot">
+          <p class="small"><a href="https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530">CircuitVerse Project Link</a></p>
+        </div>
+        <div class="panel accent">
+          <h2>What The Circuit Contains</h2>
           <ul>
-            <li>Dispense item</li>
-            <li>Return money</li>
-            <li>Show error</li>
+            <li>5 labeled inputs and 3 labeled outputs.</li>
+            <li>18 total gates: 10 AND, 4 OR, and 4 NOT gates.</li>
+            <li>Intermediate signals for enough payment and money present.</li>
+            <li>Separate logic paths for dispense, return money, and error.</li>
+            <li>The corrected circuit was checked against all 32 input combinations.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section>
-      <span class="tag">Slide 4</span>
-      <h1>Logic Design</h1>
-      <p>The product price is two coins.</p>
-      <pre>P = C1 . C2
-M = C1 + C2
-
-D = X' . S . A . P
-R = M . (X + S . A')
-E = X' . [(S . A . P') + (S . A') + (S' . M)]</pre>
-    </section>
-
-    <section>
-      <span class="tag">Slide 5</span>
-      <h1>Decision Table</h1>
-      <table>
-        <tr><th>Situation</th><th>D</th><th>R</th><th>E</th></tr>
-        <tr><td>Enough payment, selected, available</td><td>1</td><td>0</td><td>0</td></tr>
-        <tr><td>Cancel pressed after money</td><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>Product unavailable</td><td>0</td><td>1 if money inserted</td><td>1</td></tr>
-        <tr><td>Not enough payment</td><td>0</td><td>0</td><td>1</td></tr>
-        <tr><td>Money inserted but no selection</td><td>0</td><td>0</td><td>1</td></tr>
-      </table>
-    </section>
-
-    <section>
-      <span class="tag">Slide 6</span>
-      <h1>CircuitVerse Design</h1>
-      <p><a href="https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530">CircuitVerse Project Link</a></p>
-      <img src="../screenshots/circuit_design.png" alt="SmartVend CircuitVerse circuit screenshot" class="circuit-shot">
-      <ul>
-        <li>Five input switches: C1, C2, S, A, X</li>
-        <li>Intermediate signals: enough payment and money present</li>
-        <li>AND, OR, and NOT gates create output logic</li>
-        <li>Three output LEDs show dispense, return money, and error</li>
-      </ul>
-    </section>
-
-    <section>
       <span class="tag">Slide 7</span>
-      <h1>Python Prototype</h1>
-      <ul>
-        <li>Uses the same Boolean equations as the circuit</li>
-        <li>Accepts user input from a console menu</li>
-        <li>Prints output signals and a clear status message</li>
-        <li>Includes built-in test cases and a truth table option</li>
-      </ul>
+      <h1>Testing And Results</h1>
+      <p>We tested important real-world situations in both CircuitVerse and Python. The Python version also checks the same logic automatically.</p>
+      <div class="test-cards">
+        <div class="test-card">
+          <strong>Purchase</strong>
+          <span>C1=1 C2=1 S=1 A=1 X=0</span>
+          <span>D=1 R=0 E=0</span>
+        </div>
+        <div class="test-card">
+          <strong>Low Payment</strong>
+          <span>C1=1 C2=0 S=1 A=1 X=0</span>
+          <span>D=0 R=0 E=1</span>
+        </div>
+        <div class="test-card">
+          <strong>No Stock</strong>
+          <span>C1=1 C2=1 S=1 A=0 X=0</span>
+          <span>D=0 R=1 E=1</span>
+        </div>
+        <div class="test-card">
+          <strong>Cancel</strong>
+          <span>C1=1 C2=0 S=0 A=1 X=1</span>
+          <span>D=0 R=1 E=0</span>
+        </div>
+        <div class="test-card">
+          <strong>Idle</strong>
+          <span>C1=0 C2=0 S=0 A=1 X=0</span>
+          <span>D=0 R=0 E=0</span>
+        </div>
+      </div>
+      <div class="panel accent green" style="margin-top: 18px;">
+        <p><b>Result:</b> The corrected CircuitVerse design matches the Boolean equations for all 32 possible input combinations.</p>
+      </div>
     </section>
 
     <section>
       <span class="tag">Slide 8</span>
-      <h1>Demo</h1>
-      <pre>Test 1:
-C1=1, C2=1, S=1, A=1, X=0
-Expected: D=1, R=0, E=0
-
-Test 2:
-C1=1, C2=0, S=1, A=1, X=0
-Expected: D=0, R=0, E=1</pre>
+      <h1>Python Prototype</h1>
+      <div class="grid">
+        <div class="panel accent blue">
+          <h2>Software Features</h2>
+          <ul>
+            <li>Console menu for user input.</li>
+            <li>Uses the same Boolean equations as the circuit.</li>
+            <li>Displays intermediate signals <code>P</code> and <code>M</code>.</li>
+            <li>Prints final outputs <code>D</code>, <code>R</code>, and <code>E</code>.</li>
+            <li>Includes a truth table option and built-in test cases.</li>
+          </ul>
+          <p class="small">Code file: <code>src/main.py</code></p>
+        </div>
+        <div>
+          <img src="../screenshots/python_output.png" alt="Python output screenshot" class="shot terminal-shot">
+        </div>
+      </div>
+      <pre>python src/main.py --test
+6/6 tests passed.</pre>
     </section>
 
     <section>
       <span class="tag">Slide 9</span>
-      <h1>AI/LLM Usage</h1>
-      <ul>
-        <li>AI helped organize the idea and draft explanations.</li>
-        <li>AI helped generate Python code and test cases.</li>
-        <li>The group checked the equations, truth table, and output behavior.</li>
-        <li>Each member should explain their own contribution.</li>
-      </ul>
+      <h1>Teamwork And AI Usage</h1>
+      <h2>Team Roles</h2>
+      <div class="roles">
+        <div class="role"><b>Unarov Ahrorbek</b><span>Logic design and Boolean rules</span></div>
+        <div class="role"><b>Temur Aliyev</b><span>Python prototype and presentation demo</span></div>
+        <div class="role"><b>Islom Raxmanov</b><span>CircuitVerse construction and testing</span></div>
+        <div class="role"><b>Shaxzodbek Turabidinov</b><span>Documentation and repository organization</span></div>
+        <div class="role"><b>Soliha Xolova</b><span>Testing and AI/LLM reflection</span></div>
+      </div>
+      <div class="grid" style="margin-top: 18px;">
+        <div class="panel accent violet">
+          <h2>AI Helped With</h2>
+          <ul>
+            <li>Organizing the project idea.</li>
+            <li>Drafting equations and test cases.</li>
+            <li>Creating a Python prototype.</li>
+            <li>Improving README and presentation wording.</li>
+          </ul>
+        </div>
+        <div class="panel accent green">
+          <h2>What We Checked</h2>
+          <ul>
+            <li>We tested the CircuitVerse circuit.</li>
+            <li>We compared the logic with the Python program.</li>
+            <li>We reviewed what each input, gate, and output means.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section>
       <span class="tag">Slide 10</span>
-      <h1>Conclusion</h1>
-      <ul>
-        <li>The circuit makes correct vending decisions.</li>
-        <li>The Python version matches the digital logic.</li>
-        <li>Future work can add multiple products, inventory memory, and a stronger state machine.</li>
-      </ul>
+      <h1>Conclusion And Future Improvement</h1>
+      <div class="grid">
+        <div class="panel accent green">
+          <h2>Conclusion</h2>
+          <ul>
+            <li>The vending machine logic works using basic gates.</li>
+            <li>The CircuitVerse design and Python program follow the same decision rules.</li>
+            <li>The project connects EEE120 concepts to a practical embedded-system example.</li>
+            <li>Testing showed the corrected circuit handles normal, cancel, unavailable, and error cases.</li>
+          </ul>
+        </div>
+        <div class="panel accent amber">
+          <h2>Future Work</h2>
+          <ul>
+            <li>Add different products with different prices.</li>
+            <li>Add memory for inserted money and product inventory.</li>
+            <li>Add a counter or state machine for Idle, Money Inserted, Dispense, and Return states.</li>
+            <li>Add a seven-segment display for price, stock, or error code.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-box">Basic logic gates</div>
+        <div class="arrow">></div>
+        <div class="flow-box">Working vending decision</div>
+        <div class="arrow">></div>
+        <div class="flow-box">Real system idea</div>
+      </div>
     </section>
   </main>
 </body>

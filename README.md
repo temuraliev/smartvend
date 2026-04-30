@@ -2,13 +2,13 @@
 
 ## Group Members
 
-| Name | Student ID | Role |
-|---|---|---|
-| Unarov Ahrorbek | Add ID | Logic Designer |
-| Temur Aliyev | Add ID | Python Developer / Presenter |
-| Islom Raxmanov | Add ID | CircuitVerse Designer |
-| Shaxzodbek Turabidinov | Add ID | Documentation Lead |
-| Soliha Xolova | Add ID | Testing and AI/LLM Reflection |
+| Name | Role |
+|---|---|
+| Unarov Ahrorbek  | Logic Designer |
+| Temur Aliyev  | Python Developer / Presenter |
+| Islom Raxmanov  | CircuitVerse Designer |
+| Shaxzodbek Turabidinov  | Documentation Lead |
+| Soliha Xolova | Testing and AI/LLM Reflection |
 
 ## Course
 
@@ -86,10 +86,6 @@ Explanation:
 
 [SmartVend Mini CircuitVerse Project](https://circuitverse.org/users/425977/projects/smartvend-mini-simple-vending-machine-logic-f68a34e8-7c62-4537-a0f3-0334030dd530)
 
-For the fastest build path, use [docs/circuitverse_fast_submission_plan.md](docs/circuitverse_fast_submission_plan.md).
-
-For the easiest click-by-click guide, use [docs/circuitverse_super_friendly_guide.md](docs/circuitverse_super_friendly_guide.md).
-
 The verified CircuitVerse design file is included as [SmartVend Mini - Simple Vending Machine Logic.cv](SmartVend%20Mini%20-%20Simple%20Vending%20Machine%20Logic.cv).
 
 ## Python Program Explanation
@@ -102,16 +98,13 @@ The Python program in [src/main.py](src/main.py) uses the same Boolean equations
 - A full truth table option.
 - Built-in test cases to verify the most important decisions.
 
+## Presentation
+
+The presentation file is included at [presentation/final_presentation.html](presentation/final_presentation.html).
+
 ## How AI/LLM Was Used
 
-AI was used to help:
-
-- Organize the project idea.
-- Write the first version of the Boolean equations.
-- Generate the Python prototype.
-- Prepare README and presentation wording.
-
-The group should check and understand all equations, test cases, and code before submission. During the presentation, each member should be able to explain their assigned part.
+AI was used to help organize the idea, draft explanations, generate test cases, and prepare the first version of the Python prototype and presentation text. The group checked the Boolean logic, CircuitVerse behavior, and Python test results to make sure the work was understood and correct.
 
 ## How to Run the Python Code
 
@@ -135,17 +128,12 @@ python src/main.py --truth-table
 
 ## Screenshots
 
-Place final screenshots in the [screenshots](screenshots/) folder:
-
 - `circuit_design.png`: screenshot of the CircuitVerse circuit.
 - `python_output.png`: screenshot of your Python program output.
 
-The CircuitVerse screenshot has been added. Add the Python output screenshot after running the software test command.
-
 ## Future Improvements
 
-- Add product prices for several different products.
-- Add a counter to store how many coins were inserted.
-- Add inventory memory for each item.
-- Add a seven-segment display for price or error code.
-- Add a stronger sequential state machine with Idle, Money Inserted, Dispense, and Cancel states.
+- Add multiple products with different prices.
+- Add memory for inserted money and product inventory.
+- Add a counter or state machine for Idle, Money Inserted, Dispense, and Return states.
+- Add a seven-segment display for price, stock, or error code.

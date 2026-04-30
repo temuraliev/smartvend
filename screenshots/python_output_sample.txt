@@ -1,9 +1,0 @@
-PASS: dispense when payment is enough and product is available
-PASS: return money when cancel is pressed after inserting money
-PASS: show error when payment is not enough
-PASS: return money and show error when product is unavailable
-PASS: show error when money is inserted but no product is selected
-PASS: stay idle when no input is active
-
-6/6 tests passed.
-
